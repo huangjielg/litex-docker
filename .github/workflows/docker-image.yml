@@ -16,7 +16,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:test
     - name: export docker
-      run: docker save  my-image-name:test | xz > xz  images.tar.xz
+      run: docker save  my-image-name:test | xz > images.tar.xz
        
     - name: Upload docker image
       uses: actions/upload-artifact@main
