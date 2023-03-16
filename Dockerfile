@@ -2,7 +2,7 @@ FROM ubuntu:latest
 RUN apt update   
 # MXE Requirements
 RUN apt-get install -y --no-install-recommends \
- wget git\
+ wget git python3-pip\
  python3 python3-setuptools build-essential && rm -rf /var/lib/apt/lists/*  
 RUN mkdir /WORK
 WORKDIR /WORK
