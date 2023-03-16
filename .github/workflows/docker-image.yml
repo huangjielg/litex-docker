@@ -14,4 +14,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag my-image-name:test
+    - name: export docker
+      run: |
+       docker save -o images.tar my-image-name:test
+       xz  images.tar
+    - name: Upload docker image
+      uses: actions/upload-artifact@main
+      with :
+          name: dockerimg
+          path:  images.tar.xz
