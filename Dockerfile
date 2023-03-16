@@ -7,7 +7,7 @@ RUN apt-get install -y --no-install-recommends \
 RUN mkdir /WORK
 WORKDIR /WORK
 
-RUN wget https://raw.githubusercontent.com/enjoy-digital/litex/master/litex_setup.py && \
+RUN wget --no-check-certificate https://raw.githubusercontent.com/enjoy-digital/litex/master/litex_setup.py && \
         chmod +x litex_setup.py && \
         ./litex_setup.py init install
         
